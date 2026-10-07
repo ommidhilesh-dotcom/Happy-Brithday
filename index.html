@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width,
+             initial-scale=1.0,
+             maximum-scale=1.0,
+             user-scalable=no"
+>
 
-<title>🎀 Happy Birthday 🎀</title>
+<title>Happy Birthday ❤️</title>
+
 
 <style>
 
@@ -18,776 +25,515 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
 }
 
 body {
-    min-height: 100vh;
-    overflow-x: hidden;
 
     font-family:
-        "Trebuchet MS",
-        Arial,
-        sans-serif;
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    background: rgb(7, 10, 22);
+    color: #62434a;
 
-    color: white;
+    background: #eee3df;
 }
 
 
 /* =========================================================
-   MAIN PAGE
+   BACKGROUND
 ========================================================= */
 
-#homePage,
-#surprisePage {
+body::before {
 
-    position: relative;
-
-    min-height: 100vh;
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   HOME BACKGROUND
-========================================================= */
-
-#homePage {
-
-    background:
-
-        radial-gradient(
-            circle at 10% 15%,
-            rgba(255, 0, 170, .28),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 90% 20%,
-            rgba(0, 220, 255, .28),
-            transparent 32%
-        ),
-
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(140, 0, 255, .28),
-            transparent 38%
-        ),
-
-        rgb(15, 18, 35);
-}
-
-
-/* =========================================================
-   STAR BACKGROUND
-========================================================= */
-
-.stars,
-.stars2,
-.stars3 {
+    content: "";
 
     position: fixed;
 
     inset: 0;
 
+    z-index: -2;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 191, 205, .48),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(213, 185, 215, .38),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 215, 190, .42),
+            transparent 32%
+        );
+
     pointer-events: none;
-
-    z-index: 1;
-}
-
-.stars {
-
-    background-image:
-
-        radial-gradient(
-            2px 2px at 20px 30px,
-            white,
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 100px 150px,
-            white,
-            transparent
-        ),
-
-        radial-gradient(
-            2px 2px at 250px 100px,
-            white,
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 350px 220px,
-            white,
-            transparent
-        ),
-
-        radial-gradient(
-            2px 2px at 500px 50px,
-            white,
-            transparent
-        );
-
-    background-size: 550px 300px;
-
-    animation:
-        starsMove 30s linear infinite;
-
-    opacity: .6;
-}
-
-.stars2 {
-
-    background-image:
-
-        radial-gradient(
-            1px 1px at 50px 80px,
-            #00ffff,
-            transparent
-        ),
-
-        radial-gradient(
-            2px 2px at 180px 200px,
-            #ff00cc,
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 400px 140px,
-            #ffd700,
-            transparent
-        );
-
-    background-size: 600px 350px;
-
-    animation:
-        starsMove 45s linear infinite reverse;
-
-    opacity: .55;
-}
-
-.stars3 {
-
-    background-image:
-
-        radial-gradient(
-            2px 2px at 80px 180px,
-            #ff69d4,
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 300px 50px,
-            #00ffff,
-            transparent
-        );
-
-    background-size: 700px 400px;
-
-    animation:
-        starsMove 60s linear infinite;
-
-    opacity: .4;
-}
-
-@keyframes starsMove {
-
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(300px);
-    }
 }
 
 
 /* =========================================================
-   FLOATING TEDDIES
+   DECORATIVE BACKGROUND FLOWERS
 ========================================================= */
 
-.floatingTeddy {
+.bgFlower {
 
     position: fixed;
 
-    z-index: 5;
-
-    font-size: 65px;
+    z-index: -1;
 
     pointer-events: none;
 
-    filter:
-        drop-shadow(0 0 10px #ff69d4)
-        drop-shadow(0 0 25px #00ffff);
+    opacity: .5;
 
     animation:
-        teddyFloat 4s ease-in-out infinite;
+        floatingFlower 6s ease-in-out infinite;
 }
 
-.teddy1 {
+.bgFlower.one {
+
+    top: 7%;
     left: 5%;
-    top: 14%;
+
+    font-size: 25px;
 }
 
-.teddy2 {
+.bgFlower.two {
+
+    top: 18%;
     right: 5%;
-    top: 20%;
-    animation-delay: 1s;
+
+    font-size: 20px;
+
+    animation-delay: 1.5s;
 }
 
-.teddy3 {
-    left: 7%;
-    bottom: 12%;
-    animation-delay: 2s;
-}
+.bgFlower.three {
 
-.teddy4 {
-    right: 7%;
-    bottom: 10%;
+    bottom: 16%;
+    left: 6%;
+
+    font-size: 22px;
+
     animation-delay: 3s;
 }
 
-@keyframes teddyFloat {
+.bgFlower.four {
 
-    0%,100% {
+    bottom: 8%;
+    right: 7%;
+
+    font-size: 25px;
+
+    animation-delay: 4s;
+}
+
+
+@keyframes floatingFlower {
+
+    0%,
+    100% {
         transform:
             translateY(0)
-            rotate(-6deg)
-            scale(1);
+            rotate(0deg);
     }
 
     50% {
         transform:
-            translateY(-25px)
-            rotate(6deg)
-            scale(1.08);
+            translateY(-14px)
+            rotate(7deg);
     }
 }
 
 
 /* =========================================================
-   BALLOONS
+   COMMON PAGE
 ========================================================= */
 
-.balloon {
+.page {
 
-    position: fixed;
+    width: 100%;
 
-    z-index: 3;
+    min-height: 100vh;
 
-    width: 55px;
-    height: 70px;
+    min-height: 100svh;
 
-    border-radius:
-        50% 50% 45% 45%;
+    display: flex;
 
-    opacity: .75;
+    justify-content: center;
 
-    filter:
-        drop-shadow(0 0 12px currentColor);
+    align-items: center;
 
-    animation:
-        balloonFloat 5s ease-in-out infinite;
+    padding:
+
+        max(15px, env(safe-area-inset-top))
+
+        12px
+
+        max(15px, env(safe-area-inset-bottom));
 }
 
-.balloon::after {
+
+/* =========================================================
+   HIDDEN
+========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   FIRST CARD
+========================================================= */
+
+.birthdayCard {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    position: relative;
+
+    padding:
+
+        32px
+
+        20px
+
+        30px;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #fffaf8,
+            #fdf0f2
+        );
+
+    border:
+
+        1px solid #dfbdc2;
+
+    border-radius: 28px;
+
+    box-shadow:
+
+        0 20px 55px
+        rgba(79, 45, 54, .16);
+
+    overflow: hidden;
+
+    animation:
+        cardAppear .8s ease;
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.97);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   INNER BORDER
+========================================================= */
+
+.birthdayCard::before {
 
     content: "";
 
     position: absolute;
 
-    width: 2px;
+    inset: 9px;
 
-    height: 80px;
+    border:
+        1px solid #e5c8cc;
 
-    background:
-        rgba(255,255,255,.5);
+    border-radius: 21px;
 
-    left: 50%;
-
-    top: 65px;
-}
-
-.b1 {
-    left: 15%;
-    top: 8%;
-    background: #ff1493;
-    color: #ff1493;
-}
-
-.b2 {
-    left: 80%;
-    top: 12%;
-    background: #00ffff;
-    color: #00ffff;
-    animation-delay: 1s;
-}
-
-.b3 {
-    left: 8%;
-    bottom: 30%;
-    background: #9b59ff;
-    color: #9b59ff;
-    animation-delay: 2s;
-}
-
-.b4 {
-    right: 12%;
-    bottom: 25%;
-    background: #ffd700;
-    color: #ffd700;
-    animation-delay: 3s;
-}
-
-@keyframes balloonFloat {
-
-    0%,100% {
-        transform:
-            translateY(0)
-            rotate(-5deg);
-    }
-
-    50% {
-        transform:
-            translateY(-30px)
-            rotate(5deg);
-    }
+    pointer-events: none;
 }
 
 
 /* =========================================================
-   FIREWORKS
+   TOP ORNAMENT
 ========================================================= */
 
-.firework {
-
-    position: fixed;
-
-    z-index: 2;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    box-shadow:
-        0 -70px 0 #ff00cc,
-        0 70px 0 #00ffff,
-        70px 0 0 #ffd700,
-        -70px 0 0 #ff1493,
-        50px 50px 0 #9b59ff,
-        -50px -50px 0 #00ffff,
-        50px -50px 0 #ffd700,
-        -50px 50px 0 #ff69d4;
-
-    animation:
-        firework 3s ease-in-out infinite;
-}
-
-.fw1 {
-    left: 20%;
-    top: 25%;
-}
-
-.fw2 {
-    right: 20%;
-    top: 40%;
-    animation-delay: 1s;
-}
-
-.fw3 {
-    left: 50%;
-    top: 12%;
-    animation-delay: 2s;
-}
-
-@keyframes firework {
-
-    0%,100% {
-        transform: scale(.2);
-        opacity: .2;
-    }
-
-    50% {
-        transform: scale(1);
-        opacity: .9;
-    }
-}
-
-
-/* =========================================================
-   HOME CONTENT
-========================================================= */
-
-.content {
+.ornament {
 
     position: relative;
 
-    z-index: 10;
+    z-index: 2;
 
-    min-height: 100vh;
+    color: #b87984;
 
-    display: flex;
+    font-size: 14px;
 
-    flex-direction: column;
+    letter-spacing: 5px;
 
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding:
-        50px 20px;
+    margin-bottom: 13px;
 }
 
 
 /* =========================================================
-   TOP TITLE
+   SMALL TITLE
 ========================================================= */
 
-.title {
+.eyebrow {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    line-height: 1.5;
+
+    color: #a56e77;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.mainTitle {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 10px;
+
+    color: #774650;
 
     font-size:
-        clamp(38px, 8vw, 90px);
-
-    font-weight: 900;
-
-    letter-spacing:
-        clamp(3px, 1vw, 10px);
-
-    color: transparent;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #ff00cc,
-            #ffd700,
-            #ffffff,
-            #00ffff,
-            #9b59ff,
-            #ff00cc
+        clamp(
+            38px,
+            11vw,
+            64px
         );
 
-    background-size: 400% 100%;
+    line-height: 1.04;
 
-    -webkit-background-clip: text;
-    background-clip: text;
+    font-weight: normal;
 
-    animation:
-        titleRGB 5s linear infinite,
-        titleGlow 2s ease-in-out infinite alternate;
-
-    text-shadow:
-        0 0 20px rgba(255,0,204,.6);
-}
-
-@keyframes titleRGB {
-
-    0% {
-        background-position: 0%;
-    }
-
-    100% {
-        background-position: 400%;
-    }
-}
-
-@keyframes titleGlow {
-
-    from {
-        filter:
-            drop-shadow(0 0 5px #ff00cc);
-    }
-
-    to {
-        filter:
-            drop-shadow(0 0 25px #00ffff)
-            drop-shadow(0 0 35px #ff00cc);
-    }
+    letter-spacing: 1px;
 }
 
 
 /* =========================================================
-   MAIN PHOTO FRAME
+   TITLE LINE
 ========================================================= */
 
-.photoFrame {
+.titleLine {
+
+    width: 90px;
+
+    height: 1px;
+
+    margin:
+        16px auto
+        18px;
+
+    background: #bf858f;
+}
+
+
+/* =========================================================
+   MAIN PHOTO
+========================================================= */
+
+.mainPhotoFrame {
 
     position: relative;
 
     width:
-        min(430px, 82vw);
-
-    aspect-ratio: 4 / 5;
-
-    margin: 30px auto;
-
-    padding: 7px;
-
-    border-radius: 35px;
-
-    background:
-
-        conic-gradient(
-            from 0deg,
-            #ff00cc,
-            #ff1493,
-            #ffd700,
-            #00ffff,
-            #008cff,
-            #9b00ff,
-            #ff00cc
+        min(
+            78vw,
+            330px
         );
 
-    background-size: 300% 300%;
+    margin:
+        0 auto
+        18px;
 
-    animation:
-        frameRGB 5s linear infinite,
-        frameBreath 3s ease-in-out infinite;
-
-    box-shadow:
-        0 0 20px #ff00cc,
-        0 0 50px rgba(0,255,255,.45);
-
-    overflow: visible;
-}
-
-@keyframes frameRGB {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes frameBreath {
-
-    0%,100% {
-
-        transform: scale(1);
-
-        box-shadow:
-            0 0 20px #ff00cc,
-            0 0 45px rgba(0,255,255,.35);
-    }
-
-    50% {
-
-        transform: scale(1.035);
-
-        box-shadow:
-            0 0 30px #ff00cc,
-            0 0 65px #00ffff,
-            0 0 100px rgba(255,0,204,.45);
-    }
-}
-
-
-/* =========================================================
-   SAME PHOTO BACKGROUND
-========================================================= */
-
-.photoBackground {
-
-    position: absolute;
-
-    inset: 10px;
-
-    overflow: hidden;
-
-    border-radius: 27px;
-
-    z-index: 1;
-}
-
-.photoBackground img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transform: scale(1.18);
-
-    filter:
-        blur(20px)
-        saturate(1.7)
-        brightness(.55);
-
-    opacity: .75;
-
-    animation:
-        backgroundZoom 5s ease-in-out infinite alternate;
-}
-
-@keyframes backgroundZoom {
-
-    from {
-        transform: scale(1.18);
-    }
-
-    to {
-        transform: scale(1.32);
-    }
-}
-
-
-/* =========================================================
-   FRONT PHOTO
-========================================================= */
-
-.photoInner {
-
-    position: absolute;
-
-    inset: 14px;
-
-    overflow: hidden;
-
-    border-radius: 24px;
-
-    z-index: 5;
-
-    border:
-        2px solid rgba(255,255,255,.8);
-
-    box-shadow:
-        inset 0 0 30px rgba(0,0,0,.65),
-        0 0 20px rgba(255,255,255,.25);
-}
-
-.photoInner img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    animation:
-        photoZoom 4s ease-in-out infinite alternate;
-
-    transition:
-        opacity .6s ease;
-}
-
-@keyframes photoZoom {
-
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.06);
-    }
-}
-
-
-/* =========================================================
-   PHOTO LIGHT SWEEP
-========================================================= */
-
-.photoSweep {
-
-    position: absolute;
-
-    top: -80%;
-
-    left: -70%;
-
-    width: 45%;
-
-    height: 260%;
-
-    z-index: 10;
-
-    pointer-events: none;
-
-    transform: rotate(25deg);
+    padding: 7px;
 
     background:
 
         linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.05),
-            rgba(255,255,255,.55),
-            rgba(255,255,255,.05),
-            transparent
+            135deg,
+            #d29aa5,
+            #fffaf8,
+            #c8949f
         );
 
+    border-radius: 21px;
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(80, 45, 55, .18);
+
     animation:
-        photoSweep 3.5s linear infinite;
+        gentlePhoto 4s ease-in-out infinite;
 }
 
-@keyframes photoSweep {
 
-    from {
-        left: -80%;
+@keyframes gentlePhoto {
+
+    0%,
+    100% {
+        transform: scale(1);
     }
 
-    to {
-        left: 150%;
+    50% {
+        transform: scale(1.015);
     }
 }
 
 
 /* =========================================================
-   TEDDY ON PHOTO
+   MAIN PHOTO
+
+   birthday.jpeg ONLY
 ========================================================= */
 
-.photoTeddy {
+.mainPhoto {
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #f3e7e5;
+
+    border:
+        4px solid #fffaf8;
+
+    border-radius: 15px;
+}
+
+
+/* =========================================================
+   TEDDY
+========================================================= */
+
+.teddy {
 
     position: absolute;
 
-    z-index: 20;
+    left: -10px;
 
-    right: -30px;
+    bottom: 3px;
 
-    bottom: -25px;
+    z-index: 4;
 
-    font-size: 55px;
-
-    filter:
-        drop-shadow(0 0 10px #ff69d4)
-        drop-shadow(0 0 20px #00ffff);
+    font-size: 43px;
 
     animation:
-        photoTeddy 2.5s ease-in-out infinite;
+        teddyMove 3s ease-in-out infinite;
 }
 
-@keyframes photoTeddy {
 
-    0%,100% {
+@keyframes teddyMove {
+
+    0%,
+    100% {
+
         transform:
-            rotate(-7deg)
-            translateY(0);
+            translateY(0)
+            rotate(-4deg);
     }
 
     50% {
+
         transform:
-            rotate(7deg)
-            translateY(-12px);
+            translateY(-7px)
+            rotate(4deg);
     }
+}
+
+
+/* =========================================================
+   PHOTO LABEL
+========================================================= */
+
+.photoTag {
+
+    position: absolute;
+
+    right: -4px;
+
+    bottom: 18px;
+
+    padding:
+        7px 13px;
+
+    background: #8d5661;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    box-shadow:
+        0 5px 14px
+        rgba(70, 38, 45, .2);
+
+    transform: rotate(-4deg);
 }
 
 
@@ -799,1237 +545,346 @@ body {
 
     position: relative;
 
-    margin-top: 10px;
+    z-index: 2;
 
-    margin-bottom: 25px;
-
-    font-family:
-        "Trebuchet MS",
-        "Arial Rounded MT Bold",
-        Arial,
-        sans-serif;
+    color: #70434c;
 
     font-size:
-        clamp(30px, 6vw, 65px);
-
-    font-weight: 900;
-
-    letter-spacing:
-        clamp(2px, 1vw, 8px);
-
-    text-transform: uppercase;
-
-    color: transparent;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #fff7ad,
-            #ffd700,
-            #ffffff,
-            #ff69d4,
-            #ffffff,
-            #00ffff,
-            #fff7ad
+        clamp(
+            24px,
+            7vw,
+            41px
         );
 
-    background-size: 300% 100%;
+    font-weight: bold;
 
-    -webkit-background-clip: text;
-    background-clip: text;
+    letter-spacing: 3px;
 
-    -webkit-text-fill-color: transparent;
-
-    filter:
-        drop-shadow(0 0 5px rgba(255,255,255,.8))
-        drop-shadow(0 0 12px rgba(255,0,204,.9))
-        drop-shadow(0 0 25px rgba(0,255,255,.7));
-
-    animation:
-        nameShine 4s linear infinite,
-        nameFloat 3s ease-in-out infinite,
-        nameGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes nameShine {
-
-    from {
-        background-position: 0%;
-    }
-
-    to {
-        background-position: 300%;
-    }
-}
-
-@keyframes nameFloat {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-@keyframes nameGlow {
-
-    from {
-        filter:
-            drop-shadow(0 0 5px #ff00cc);
-    }
-
-    to {
-        filter:
-            drop-shadow(0 0 12px #ff00cc)
-            drop-shadow(0 0 25px #00ffff);
-    }
-}
-
-.name::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 10%;
-
-    right: 10%;
-
-    bottom: -12px;
-
-    height: 3px;
-
-    border-radius: 50%;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            #ff00cc,
-            #00ffff,
-            #ffd700,
-            #ff00cc,
-            transparent
-        );
-
-    box-shadow:
-        0 0 10px #ff00cc,
-        0 0 20px #00ffff;
-
-    animation:
-        underlineGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes underlineGlow {
-
-    from {
-        opacity: .45;
-        transform: scaleX(.75);
-    }
-
-    to {
-        opacity: 1;
-        transform: scaleX(1);
-    }
+    margin-top: 7px;
 }
 
 
 /* =========================================================
-   SURPRISE BUTTON
+   MESSAGE
 ========================================================= */
 
-.surpriseButton {
+.message {
 
     position: relative;
 
-    border: 2px solid transparent;
+    z-index: 2;
 
-    border-radius: 50px;
+    width: 100%;
 
-    padding:
-        16px 35px;
-
-    font-size:
-        clamp(16px, 3vw, 22px);
-
-    font-weight: 900;
-
-    color: white;
-
-    cursor: pointer;
-
-    background:
-
-        linear-gradient(
-            rgba(20,20,35,.9),
-            rgba(20,20,35,.9)
-        ) padding-box,
-
-        linear-gradient(
-            90deg,
-            #ff00cc,
-            #ffd700,
-            #00ffff,
-            #9b59ff,
-            #ff00cc
-        ) border-box;
-
-    box-shadow:
-        0 0 15px #ff00cc,
-        0 0 30px rgba(0,255,255,.35);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-
-    animation:
-        buttonBreath 2s ease-in-out infinite;
-}
-
-.surpriseButton:hover {
-
-    transform:
-        translateY(-5px)
-        scale(1.04);
-
-    box-shadow:
-        0 0 25px #ff00cc,
-        0 0 50px #00ffff;
-}
-
-@keyframes buttonBreath {
-
-    0%,100% {
-        box-shadow:
-            0 0 15px #ff00cc,
-            0 0 30px rgba(0,255,255,.3);
-    }
-
-    50% {
-        box-shadow:
-            0 0 25px #ff00cc,
-            0 0 45px #00ffff;
-    }
-}
-
-
-/* =========================================================
-   SURPRISE PAGE
-========================================================= */
-
-#surprisePage {
-
-    display: none;
-
-    background:
-
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(255,0,204,.25),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(0,255,255,.25),
-            transparent 32%
-        ),
-
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(130,0,255,.25),
-            transparent 40%
-        ),
-
-        rgb(8, 13, 27);
-
-    padding:
-        35px 20px 80px;
-}
-
-
-/* =========================================================
-   MEMORIES OUTER FRAME
-========================================================= */
-
-.memoriesFrame {
-
-    position: relative;
-
-    width: min(1100px, 94vw);
+    max-width: 400px;
 
     margin:
-        0 auto 30px;
+        12px auto 0;
 
     padding:
-        38px 28px 45px;
+        0 5px;
 
-    border-radius: 38px;
+    color: #765960;
 
-    background:
+    font-size: 14px;
 
-        linear-gradient(
-            135deg,
-            rgba(255,0,204,.12),
-            rgba(0,255,255,.10),
-            rgba(255,215,0,.08)
-        );
-
-    border: 2px solid transparent;
-
-    isolation: isolate;
-
-    box-shadow:
-        0 0 25px rgba(255,0,204,.35),
-        0 0 60px rgba(0,255,255,.18);
-
-    overflow: hidden;
-
-    animation:
-        memoriesBreath 4s ease-in-out infinite;
-}
-
-
-/* RGB border */
-
-.memoriesFrame::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    border-radius: 38px;
-
-    padding: 2px;
-
-    background:
-
-        linear-gradient(
-            120deg,
-            #ff00cc,
-            #00ffff,
-            #ffd700,
-            #9b59ff,
-            #ff00cc
-        );
-
-    background-size: 300% 300%;
-
-    animation:
-        memoriesRGB 5s linear infinite;
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite: xor;
-
-    mask-composite: exclude;
-
-    pointer-events: none;
-
-    z-index: 20;
-}
-
-@keyframes memoriesRGB {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes memoriesBreath {
-
-    0%,100% {
-
-        transform: scale(1);
-
-        box-shadow:
-            0 0 25px rgba(255,0,204,.35),
-            0 0 60px rgba(0,255,255,.18);
-    }
-
-    50% {
-
-        transform: scale(1.012);
-
-        box-shadow:
-            0 0 35px rgba(255,0,204,.55),
-            0 0 80px rgba(0,255,255,.3),
-            0 0 120px rgba(155,89,255,.18);
-    }
+    line-height: 1.75;
 }
 
 
 /* =========================================================
-   MEMORIES GLOW
+   HEARTS
 ========================================================= */
 
-.memoriesFrame::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: -30px;
-
-    background:
-
-        conic-gradient(
-            from 0deg,
-            rgba(255,0,204,.18),
-            rgba(0,255,255,.15),
-            rgba(255,215,0,.12),
-            rgba(155,89,255,.18),
-            rgba(255,0,204,.18)
-        );
-
-    filter: blur(35px);
-
-    opacity: .6;
-
-    z-index: -2;
-
-    animation:
-        memoriesGlow 7s linear infinite;
-}
-
-@keyframes memoriesGlow {
-
-    from {
-        transform: rotate(0deg) scale(.9);
-    }
-
-    to {
-        transform: rotate(360deg) scale(1.1);
-    }
-}
-
-
-/* =========================================================
-   MOVING LIGHT OVER MEMORIES
-========================================================= */
-
-.memoriesLight {
-
-    position: absolute;
-
-    top: -80%;
-
-    left: -50%;
-
-    width: 25%;
-
-    height: 260%;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.06),
-            rgba(255,255,255,.25),
-            rgba(255,255,255,.06),
-            transparent
-        );
-
-    transform: rotate(25deg);
-
-    pointer-events: none;
-
-    z-index: 15;
-
-    animation:
-        memoriesLightMove 5s linear infinite;
-}
-
-@keyframes memoriesLightMove {
-
-    from {
-        left: -50%;
-    }
-
-    to {
-        left: 140%;
-    }
-}
-
-
-/* =========================================================
-   MEMORY TITLE BOX
-========================================================= */
-
-.memoryTitleBox {
-
-    position: relative;
-
-    width: min(820px, 95%);
-
-    margin:
-        0 auto 30px;
-
-    padding:
-        28px 25px 22px;
-
-    text-align: center;
-
-    border-radius: 24px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(255,0,204,.13),
-            rgba(0,255,255,.10)
-        );
-
-    border:
-        1px solid rgba(255,255,255,.22);
-
-    box-shadow:
-        inset 0 0 35px rgba(255,255,255,.04),
-        0 0 25px rgba(255,0,204,.18);
-
-    overflow: hidden;
-}
-
-.memoryTitle {
-
-    position: relative;
-
-    font-size:
-        clamp(30px, 5vw, 58px);
-
-    font-weight: 900;
-
-    letter-spacing:
-        clamp(2px, .7vw, 7px);
-
-    color: transparent;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #ffd700,
-            #ff69d4,
-            #00ffff,
-            #ffd700
-        );
-
-    background-size: 300% 100%;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    animation:
-        memoryTitleRGB 4s linear infinite,
-        memoryTitleGlow 2s ease-in-out infinite alternate;
-
-    text-shadow:
-        0 0 15px rgba(255,0,204,.4);
-}
-
-@keyframes memoryTitleRGB {
-
-    from {
-        background-position: 0%;
-    }
-
-    to {
-        background-position: 300%;
-    }
-}
-
-@keyframes memoryTitleGlow {
-
-    from {
-        filter:
-            drop-shadow(0 0 5px #ff00cc);
-    }
-
-    to {
-        filter:
-            drop-shadow(0 0 12px #00ffff)
-            drop-shadow(0 0 20px #ff00cc);
-    }
-}
-
-.memorySubtitle {
-
-    margin-top: 15px;
-
-    font-size:
-        clamp(14px, 2vw, 20px);
-
-    font-weight: 700;
-
-    color: #ffffff;
-
-    text-shadow:
-        0 0 8px #ff00cc,
-        0 0 15px #00ffff;
-}
-
-.memoryUnderline {
-
-    width: 70%;
-
-    height: 3px;
-
-    margin:
-        16px auto 10px;
-
-    border-radius: 50%;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            #ff00cc,
-            #00ffff,
-            #ffd700,
-            #ff00cc,
-            transparent
-        );
-
-    box-shadow:
-        0 0 10px #ff00cc,
-        0 0 20px #00ffff;
-
-    animation:
-        underlineBreath 2s ease-in-out infinite alternate;
-}
-
-@keyframes underlineBreath {
-
-    from {
-        transform: scaleX(.7);
-        opacity: .5;
-    }
-
-    to {
-        transform: scaleX(1);
-        opacity: 1;
-    }
-}
-
-.memoryTeddy {
+.hearts {
 
     margin-top: 12px;
 
-    font-size: 30px;
+    color: #b97884;
 
-    letter-spacing: 10px;
+    font-size: 14px;
 
-    filter:
-        drop-shadow(0 0 8px #ff69d4);
-
-    animation:
-        titleTeddy 2s ease-in-out infinite;
-}
-
-@keyframes titleTeddy {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-6px);
-    }
+    letter-spacing: 5px;
 }
 
 
 /* =========================================================
-   CORNER TEDDIES
+   OPEN BUTTON
 ========================================================= */
 
-.memoryCornerTeddy {
+.openButton {
 
-    position: absolute;
+    width:
+        min(
+            90%,
+            315px
+        );
 
-    z-index: 30;
+    min-height: 52px;
 
-    font-size: 48px;
+    margin-top: 20px;
 
-    filter:
-        drop-shadow(0 0 10px #ff69d4)
-        drop-shadow(0 0 20px #00ffff);
+    border:
+        1px solid #a96f7a;
 
-    animation:
-        cornerTeddy 3s ease-in-out infinite;
+    border-radius: 30px;
+
+    background: #8d5661;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(75, 40, 50, .17);
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
 }
 
-.memoryCornerTeddy.left {
 
-    left: 20px;
+.openButton:active {
 
-    top: 15px;
-}
+    transform: scale(.95);
 
-.memoryCornerTeddy.right {
-
-    right: 20px;
-
-    top: 15px;
-
-    animation-delay: 1.5s;
-}
-
-@keyframes cornerTeddy {
-
-    0%,100% {
-        transform:
-            translateY(0)
-            rotate(-5deg);
-    }
-
-    50% {
-        transform:
-            translateY(-10px)
-            rotate(5deg);
-    }
+    background: #70434c;
 }
 
 
 /* =========================================================
-   ONE MEMORY AREA
+   MEMORY PAGE
 ========================================================= */
 
-.singleMemoryArea {
+.memoryPage {
 
-    position: relative;
+    align-items: flex-start;
+
+    padding-top:
+        max(
+            15px,
+            env(safe-area-inset-top)
+        );
+}
+
+
+/* =========================================================
+   MEMORY CARD
+========================================================= */
+
+.memoryCard {
 
     width: 100%;
 
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
+    max-width: 700px;
 
     padding:
-        5px 0 10px;
-}
-
-
-/* =========================================================
-   SINGLE MEMORY FRAME
-========================================================= */
-
-.singleMemoryFrame {
-
-    position: relative;
-
-    width:
-        min(470px, 78vw);
-
-    aspect-ratio: 4 / 5;
-
-    padding: 7px;
-
-    border-radius: 34px;
-
-    background:
-
-        conic-gradient(
-            from 0deg,
-            #ff00cc,
-            #ff1493,
-            #ffd700,
-            #00ffff,
-            #008cff,
-            #9b00ff,
-            #ff00cc
-        );
-
-    background-size: 300% 300%;
-
-    animation:
-        singleFrameRGB 5s linear infinite,
-        singleFrameBreath 3s ease-in-out infinite;
-
-    box-shadow:
-        0 0 20px #ff00cc,
-        0 0 45px rgba(0,255,255,.45);
-
-    isolation: isolate;
-
-    overflow: visible;
-
-    transition:
-        transform .7s ease,
-        opacity .7s ease;
-}
-
-
-/* =========================================================
-   FRAME RGB
-========================================================= */
-
-@keyframes singleFrameRGB {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    25% {
-        background-position: 100% 50%;
-    }
-
-    50% {
-        background-position: 100% 100%;
-    }
-
-    75% {
-        background-position: 0% 100%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-/* =========================================================
-   FRAME BREATHING
-========================================================= */
-
-@keyframes singleFrameBreath {
-
-    0%,100% {
-
-        transform: scale(1);
-
-        box-shadow:
-            0 0 18px #ff00cc,
-            0 0 40px rgba(255,0,204,.4),
-            0 0 65px rgba(0,255,255,.2);
-    }
-
-    50% {
-
-        transform: scale(1.035);
-
-        box-shadow:
-            0 0 30px #ff00cc,
-            0 0 55px rgba(255,0,204,.8),
-            0 0 90px rgba(0,255,255,.6),
-            0 0 120px rgba(255,215,0,.25);
-    }
-}
-
-
-/* =========================================================
-   FRAME OUTER GLOW
-========================================================= */
-
-.singleMemoryGlow {
-
-    position: absolute;
-
-    inset: -20px;
-
-    border-radius: 45px;
-
-    background:
-
-        conic-gradient(
-            from 0deg,
-            #ff00cc,
-            #00ffff,
-            #ffd700,
-            #9b00ff,
-            #ff00cc
-        );
-
-    background-size: 300% 300%;
-
-    filter: blur(25px);
-
-    opacity: .35;
-
-    z-index: -2;
-
-    animation:
-        singleFrameRGB 5s linear infinite,
-        memoryGlowBreath 3s ease-in-out infinite;
-}
-
-@keyframes memoryGlowBreath {
-
-    0%,100% {
-        transform: scale(.92);
-        opacity: .2;
-    }
-
-    50% {
-        transform: scale(1.12);
-        opacity: .65;
-    }
-}
-
-
-/* =========================================================
-   FRAME LIGHT
-========================================================= */
-
-.singleMemoryLight {
-
-    position: absolute;
-
-    top: -80%;
-
-    left: -80%;
-
-    width: 45%;
-
-    height: 260%;
+        31px
+        12px
+        28px;
 
     background:
 
         linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.10),
-            rgba(255,255,255,.65),
-            rgba(255,255,255,.10),
-            transparent
+            145deg,
+            #fffaf8,
+            #fdf0f2
         );
 
-    transform: rotate(25deg);
+    border:
+        1px solid #dfbdc2;
 
-    z-index: 10;
+    border-radius: 28px;
 
-    pointer-events: none;
+    text-align: center;
+
+    box-shadow:
+
+        0 20px 55px
+        rgba(79, 45, 54, .16);
+
+    position: relative;
+
+    overflow: hidden;
 
     animation:
-        singleMemoryLightMove 3.2s linear infinite;
-}
-
-@keyframes singleMemoryLightMove {
-
-    0% {
-        left: -80%;
-    }
-
-    100% {
-        left: 140%;
-    }
+        cardAppear .8s ease;
 }
 
 
 /* =========================================================
-   SINGLE PHOTO
+   MEMORY TITLE
 ========================================================= */
 
-.singleMemoryPhoto {
+.memoryTitle {
 
-    position: absolute;
+    color: #774650;
 
-    inset: 13px;
+    font-size:
+        clamp(
+            31px,
+            9vw,
+            54px
+        );
 
-    border-radius: 25px;
+    line-height: 1.1;
 
-    overflow: hidden;
-
-    background:
-        rgb(10,12,22);
-
-    border:
-        2px solid rgba(255,255,255,.8);
-
-    z-index: 5;
-
-    box-shadow:
-        inset 0 0 35px rgba(0,0,0,.75),
-        0 0 20px rgba(255,255,255,.2);
+    font-weight: normal;
 }
 
-.singleMemoryPhoto::after {
 
-    content: "";
+.memorySubtitle {
 
-    position: absolute;
+    margin-top: 8px;
 
-    inset: 0;
+    padding: 0 10px;
+
+    color: #9b6f77;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MEMORY FRAME
+========================================================= */
+
+.memoryFrame {
+
+    width: 100%;
+
+    margin:
+        23px auto
+        0;
+
+    padding: 7px;
 
     background:
 
         linear-gradient(
             135deg,
-            rgba(255,255,255,.12),
-            transparent 30%,
-            transparent 70%,
-            rgba(255,0,204,.08)
+            #d29aa5,
+            #fffaf8,
+            #c895a0
         );
 
-    pointer-events: none;
+    border-radius: 20px;
 
-    z-index: 3;
+    box-shadow:
+
+        0 16px 35px
+        rgba(80, 45, 55, .18);
+
+    overflow: hidden;
+
+    touch-action: pan-y;
+
+    user-select: none;
 }
 
-.singleMemoryPhoto img {
 
-    width: 100%;
-    height: 100%;
+/* =========================================================
+   MEMORY PHOTO
+
+   ONE PHOTO AT A TIME
+========================================================= */
+
+.memoryPhoto {
 
     display: block;
 
-    object-fit: cover;
+    width: 100%;
 
-    animation:
-        memoryPhotoZoom 4s ease-in-out infinite alternate;
+    height:
+        min(
+            68vh,
+            560px
+        );
 
-    transition:
-        opacity .4s ease,
-        transform .8s ease;
-}
+    object-fit: contain;
 
-@keyframes memoryPhotoZoom {
+    object-position: center;
 
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.07);
-    }
-}
-
-
-/* =========================================================
-   SLIDE OUT / IN
-========================================================= */
-
-.singleMemoryFrame.memorySlideOut {
-
-    animation:
-        memorySlideOut .65s ease forwards;
-}
-
-.singleMemoryFrame.memorySlideIn {
-
-    animation:
-        memorySlideIn .75s ease forwards;
-}
-
-@keyframes memorySlideOut {
-
-    0% {
-        opacity: 1;
-        transform:
-            translateX(0)
-            scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform:
-            translateX(-130px)
-            scale(.92);
-    }
-}
-
-@keyframes memorySlideIn {
-
-    0% {
-        opacity: 0;
-        transform:
-            translateX(130px)
-            scale(.92);
-    }
-
-    100% {
-        opacity: 1;
-        transform:
-            translateX(0)
-            scale(1);
-    }
-}
-
-
-/* =========================================================
-   FRAME CORNER GRAPHICS
-========================================================= */
-
-.memoryCorner {
-
-    position: absolute;
-
-    width: 42px;
-
-    height: 42px;
-
-    z-index: 15;
+    background: #f3e7e5;
 
     border:
-        4px solid white;
+        4px solid #fffaf8;
 
-    filter:
-        drop-shadow(0 0 8px #00ffff)
-        drop-shadow(0 0 14px #ff00cc);
+    border-radius: 14px;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   PHOTO SLIDE ANIMATION
+========================================================= */
+
+.slideOut {
 
     animation:
-        memoryCornerGlow 1.5s ease-in-out infinite alternate;
+        photoOut .45s ease forwards;
 }
 
-.memoryCorner.topLeft {
 
-    left: -5px;
-    top: -5px;
+.slideIn {
 
-    border-right: 0;
-    border-bottom: 0;
-
-    border-radius:
-        25px 0 0 0;
+    animation:
+        photoIn .45s ease forwards;
 }
 
-.memoryCorner.topRight {
 
-    right: -5px;
-    top: -5px;
-
-    border-left: 0;
-    border-bottom: 0;
-
-    border-radius:
-        0 25px 0 0;
-}
-
-.memoryCorner.bottomLeft {
-
-    left: -5px;
-    bottom: -5px;
-
-    border-right: 0;
-    border-top: 0;
-
-    border-radius:
-        0 0 0 25px;
-}
-
-.memoryCorner.bottomRight {
-
-    right: -5px;
-    bottom: -5px;
-
-    border-left: 0;
-    border-top: 0;
-
-    border-radius:
-        0 0 25px 0;
-}
-
-@keyframes memoryCornerGlow {
+@keyframes photoOut {
 
     from {
-        opacity: .45;
-        transform: scale(.9);
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
     }
 
     to {
+
+        opacity: 0;
+
+        transform:
+            translateX(-100%);
+    }
+}
+
+
+@keyframes photoIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(100%);
+    }
+
+    to {
+
         opacity: 1;
-        transform: scale(1.1);
-    }
-}
 
-
-/* =========================================================
-   TEDDY ON SINGLE FRAME
-========================================================= */
-
-.singleFrameTeddy {
-
-    position: absolute;
-
-    right: -38px;
-
-    bottom: -30px;
-
-    z-index: 30;
-
-    font-size: 58px;
-
-    filter:
-        drop-shadow(0 0 8px #ff69d4)
-        drop-shadow(0 0 20px #00ffff);
-
-    animation:
-        singleTeddyFloat 2.5s ease-in-out infinite;
-}
-
-@keyframes singleTeddyFloat {
-
-    0%,100% {
         transform:
-            rotate(-7deg)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            rotate(7deg)
-            translateY(-12px);
-    }
-}
-
-
-/* =========================================================
-   HEART
-========================================================= */
-
-.singleFrameHeart {
-
-    position: absolute;
-
-    left: -38px;
-
-    top: 45%;
-
-    z-index: 30;
-
-    font-size: 45px;
-
-    filter:
-        drop-shadow(0 0 8px #ff00cc)
-        drop-shadow(0 0 15px #ff69d4);
-
-    animation:
-        singleHeartFloat 2s ease-in-out infinite;
-}
-
-@keyframes singleHeartFloat {
-
-    0%,100% {
-        transform:
-            scale(1)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            scale(1.2)
-            translateY(-10px);
+            translateX(0);
     }
 }
 
@@ -2040,87 +895,125 @@ body {
 
 .memoryNumber {
 
-    margin-top: 25px;
+    margin-top: 17px;
 
-    padding:
-        9px 25px;
+    color: #a16f77;
 
-    border-radius: 30px;
+    font-family: Arial, sans-serif;
 
-    font-size: 18px;
+    font-size: 9px;
 
-    font-weight: 900;
+    font-weight: bold;
 
     letter-spacing: 3px;
-
-    color: white;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            rgba(255,0,204,.25),
-            rgba(0,255,255,.25),
-            rgba(255,215,0,.25)
-        );
-
-    border:
-        1px solid rgba(255,255,255,.5);
-
-    box-shadow:
-        0 0 12px #ff00cc,
-        0 0 22px rgba(0,255,255,.4);
-
-    text-shadow:
-        0 0 8px #ff00cc,
-        0 0 12px #00ffff;
 }
 
 
 /* =========================================================
-   MEMORY DOTS
+   MEMORY CAPTION
 ========================================================= */
 
-.memoryDots {
+.memoryCaption {
+
+    margin-top: 6px;
+
+    color: #70434c;
+
+    font-size: 20px;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.dots {
 
     display: flex;
 
-    gap: 11px;
-
-    margin-top: 16px;
-
     justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 18px;
+
+    padding: 0 10px;
 }
 
-.memoryDot {
 
-    width: 11px;
-    height: 11px;
+.dot {
+
+    width: 7px;
+
+    height: 7px;
 
     border-radius: 50%;
 
-    background:
-        rgba(255,255,255,.25);
-
-    border:
-        1px solid rgba(255,255,255,.5);
+    background: #d4b2b7;
 
     cursor: pointer;
 
     transition:
-        .3s ease;
+        all .25s ease;
 }
 
-.memoryDot.active {
 
-    background: #ff00cc;
+.dot.active {
 
-    transform:
-        scale(1.5);
+    width: 21px;
 
-    box-shadow:
-        0 0 8px #ff00cc,
-        0 0 16px #00ffff;
+    border-radius: 10px;
+
+    background: #8d5661;
+}
+
+
+/* =========================================================
+   MEMORY NAVIGATION
+========================================================= */
+
+.navigation {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 19px;
+}
+
+
+.navButton {
+
+    width: 48px;
+
+    height: 42px;
+
+    border:
+        1px solid #c28a93;
+
+    border-radius: 22px;
+
+    background: #fff8f6;
+
+    color: #80515a;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+.navButton:active {
+
+    transform: scale(.92);
 }
 
 
@@ -2130,356 +1023,360 @@ body {
 
 .backButton {
 
-    display: block;
-
-    margin:
-        10px auto 0;
+    min-height: 45px;
 
     padding:
-        15px 32px;
+        0 24px;
 
-    border-radius: 40px;
+    margin-top: 18px;
 
     border:
-        2px solid transparent;
+        1px solid #ae727d;
 
-    color: white;
+    border-radius: 25px;
 
-    font-size: 17px;
+    background: transparent;
 
-    font-weight: 900;
+    color: #80505a;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
 
     cursor: pointer;
-
-    background:
-
-        linear-gradient(
-            rgba(30,30,40,.9),
-            rgba(30,30,40,.9)
-        ) padding-box,
-
-        linear-gradient(
-            90deg,
-            #00ffff,
-            #ff00cc,
-            #ffd700,
-            #00ffff
-        ) border-box;
-
-    box-shadow:
-        0 0 15px #00ffff,
-        0 0 30px rgba(255,0,204,.35);
-
-    transition:
-        transform .3s ease;
 }
 
-.backButton:hover {
 
-    transform:
-        scale(1.06)
-        translateY(-3px);
+.backButton:active {
 
-    box-shadow:
-        0 0 25px #00ffff,
-        0 0 45px #ff00cc;
+    transform: scale(.95);
 }
 
 
 /* =========================================================
-   SPARKLES
+   FOOTER
 ========================================================= */
 
-.sparkle {
+.footer {
 
-    position: fixed;
+    margin-top: 18px;
 
-    z-index: 50;
+    color: #ae8188;
 
-    pointer-events: none;
+    font-family: Arial, sans-serif;
 
-    font-size: 18px;
+    font-size: 8px;
 
-    animation:
-        sparkleFloat 1.8s ease-out forwards;
-}
-
-@keyframes sparkleFloat {
-
-    0% {
-        opacity: 0;
-        transform:
-            translateY(20px)
-            scale(.3)
-            rotate(0deg);
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform:
-            translateY(-100px)
-            scale(1.2)
-            rotate(180deg);
-    }
+    letter-spacing: 2px;
 }
 
 
 /* =========================================================
-   MOBILE
+   SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (
+    max-width: 360px
+) {
 
-    .floatingTeddy {
-
-        font-size: 42px;
-    }
-
-    .balloon {
-
-        transform: scale(.7);
-    }
-
-    .content {
+    .birthdayCard {
 
         padding:
-            40px 15px;
+            26px
+            15px
+            25px;
     }
 
-    .photoFrame {
 
-        width: 78vw;
+    .mainTitle {
 
-        margin:
-            25px auto;
+        font-size: 37px;
     }
 
-    .photoTeddy {
 
-        right: -24px;
+    .mainPhotoFrame {
 
-        bottom: -20px;
-
-        font-size: 40px;
+        width:
+            min(
+                74vw,
+                270px
+            );
     }
 
-    .memoriesFrame {
-
-        width: 94vw;
-
-        padding:
-            30px 10px 35px;
-
-        border-radius: 28px;
-    }
-
-    .memoryTitleBox {
-
-        padding:
-            22px 12px 18px;
-    }
-
-    .memoryCornerTeddy {
-
-        font-size: 34px;
-    }
-
-    .memoryCornerTeddy.left {
-
-        left: 8px;
-    }
-
-    .memoryCornerTeddy.right {
-
-        right: 8px;
-    }
-
-    .singleMemoryFrame {
-
-        width: 78vw;
-
-        border-radius: 27px;
-    }
-
-    .singleMemoryPhoto {
-
-        inset: 11px;
-
-        border-radius: 21px;
-    }
-
-    .singleFrameTeddy {
-
-        right: -25px;
-
-        bottom: -22px;
-
-        font-size: 42px;
-    }
-
-    .singleFrameHeart {
-
-        left: -25px;
-
-        font-size: 32px;
-    }
-
-    .memoryNumber {
-
-        font-size: 14px;
-
-        letter-spacing: 2px;
-    }
-}
-
-
-@media (max-width: 420px) {
-
-    .title {
-
-        font-size: 35px;
-
-        letter-spacing: 2px;
-    }
 
     .name {
 
-        font-size: 30px;
+        font-size: 24px;
+
+        letter-spacing: 2px;
     }
 
-    .photoFrame {
 
-        width: 80vw;
+    .message {
+
+        font-size: 13px;
+
+        line-height: 1.65;
     }
 
-    .singleMemoryFrame {
 
-        width: 80vw;
+    .openButton {
+
+        min-height: 49px;
+
+        font-size: 10px;
     }
 
-    .memoryTeddy {
 
-        font-size: 23px;
+    .memoryCard {
 
-        letter-spacing: 4px;
+        padding-top: 26px;
     }
 
-    .memoryCornerTeddy {
 
-        font-size: 28px;
+    .memoryPhoto {
+
+        height: 57vh;
+    }
+}
+
+
+/* =========================================================
+   SHORT MOBILE SCREEN
+========================================================= */
+
+@media (
+    max-height: 700px
+) and (
+    max-width: 600px
+) {
+
+    .page {
+
+        align-items: flex-start;
+
+        padding-top: 12px;
+    }
+
+
+    .birthdayCard {
+
+        padding-top: 23px;
+    }
+
+
+    .mainTitle {
+
+        font-size: 36px;
+    }
+
+
+    .mainPhotoFrame {
+
+        width:
+            min(
+                67vw,
+                250px
+            );
+    }
+
+
+    .message {
+
+        font-size: 12.5px;
+
+        line-height: 1.55;
+    }
+
+
+    .openButton {
+
+        margin-top: 15px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP
+========================================================= */
+
+@media (
+    min-width: 700px
+) {
+
+    .birthdayCard {
+
+        padding:
+            50px
+            35px;
+    }
+
+
+    .mainPhotoFrame {
+
+        width: 350px;
+    }
+
+
+    .message {
+
+        font-size: 16px;
+    }
+
+
+    .memoryCard {
+
+        padding:
+            45px
+            25px
+            35px;
+    }
+
+
+    .memoryFrame {
+
+        max-width: 650px;
+    }
+
+
+    .memoryPhoto {
+
+        height: 500px;
     }
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================================================
-     HOME PAGE
-========================================================= -->
+<!-- =======================================================
+     BACKGROUND DECORATION
+======================================================= -->
 
-<section id="homePage">
+<div class="bgFlower one">🌸</div>
 
-    <!-- Stars -->
+<div class="bgFlower two">🌷</div>
 
-    <div class="stars"></div>
-    <div class="stars2"></div>
-    <div class="stars3"></div>
+<div class="bgFlower three">🌸</div>
 
-
-    <!-- Teddy decorations -->
-
-    <div class="floatingTeddy teddy1">🧸</div>
-    <div class="floatingTeddy teddy2">🧸</div>
-    <div class="floatingTeddy teddy3">🧸</div>
-    <div class="floatingTeddy teddy4">🧸</div>
+<div class="bgFlower four">🌷</div>
 
 
-    <!-- Balloons -->
 
-    <div class="balloon b1"></div>
-    <div class="balloon b2"></div>
-    <div class="balloon b3"></div>
-    <div class="balloon b4"></div>
+<!-- =======================================================
+     PAGE 1
+======================================================= -->
 
-
-    <!-- Fireworks -->
-
-    <div class="firework fw1"></div>
-    <div class="firework fw2"></div>
-    <div class="firework fw3"></div>
+<section
+    id="homePage"
+    class="page"
+>
 
 
-    <!-- Main -->
+    <div class="birthdayCard">
 
-    <div class="content">
 
-        <div class="title">
-            HAPPY BIRTHDAY
+        <!-- TOP -->
+
+        <div class="ornament">
+            ✦　♡　✦
         </div>
 
 
-        <!-- MAIN PHOTO -->
-
-        <div class="photoFrame">
-
-            <!-- Same image blurred in background -->
-
-            <div class="photoBackground">
-
-                <img
-                    id="mainBackgroundPhoto"
-                    src="birthday.jpg"
-                    alt="Birthday Background"
-                >
-
-            </div>
+        <div class="eyebrow">
+            A SPECIAL DAY FOR A SPECIAL PERSON
+        </div>
 
 
-            <!-- Front image -->
+        <!-- TITLE -->
 
-            <div class="photoInner">
-
-                <img
-                    id="mainPhoto"
-                    src="birthday.jpg"
-                    alt="Birthday Photo"
-                >
-
-                <div class="photoSweep"></div>
-
-            </div>
+        <h1 class="mainTitle">
+            Happy Birthday
+        </h1>
 
 
-            <div class="photoTeddy">
+        <div class="titleLine"></div>
+
+
+        <!-- =================================================
+             MAIN BIRTHDAY PHOTO
+
+             ONLY birthday.jpeg
+        ================================================== -->
+
+        <div class="mainPhotoFrame">
+
+
+            <img
+                src="birthday.jpeg"
+                alt="Birthday Photo"
+                class="mainPhoto"
+            >
+
+
+            <div class="teddy">
                 🧸
             </div>
 
+
+            <div class="photoTag">
+                WITH LOVE ♡
+            </div>
+
+
         </div>
+
 
 
         <!-- NAME -->
 
         <div class="name">
-            🎀 MIDHILESH 🎀
+            🎀 VISMAYA 🎀
         </div>
 
 
-        <!-- BUTTON -->
+
+        <!-- MESSAGE -->
+
+        <div class="message">
+
+            Wishing you a beautiful birthday
+            filled with happiness, love,
+            laughter and unforgettable moments.
+
+            <br>
+
+            May this new chapter of your life
+            bring you everything your heart
+            wishes for. ♡
+
+        </div>
+
+
+
+        <!-- HEARTS -->
+
+        <div class="hearts">
+            ♡　♥　♡
+        </div>
+
+
+
+        <!-- OPEN MEMORY -->
 
         <button
-            class="surpriseButton"
-            onclick="openSurprise()"
+            class="openButton"
+            onclick="openMemories()"
         >
-            🧸 🎁 CLICK FOR SURPRISE 🎁 🧸
+            ✦ OPEN SPECIAL MEMORIES ✦
         </button>
+
 
     </div>
 
@@ -2487,188 +1384,140 @@ body {
 
 
 
-<!-- =========================================================
-     SURPRISE / MEMORIES PAGE
-========================================================= -->
+<!-- =======================================================
+     PAGE 2 — MEMORIES
+======================================================= -->
 
-<section id="surprisePage">
-
-
-    <div class="stars"></div>
-    <div class="stars2"></div>
-    <div class="stars3"></div>
+<section
+    id="memoryPage"
+    class="page memoryPage hidden"
+>
 
 
-    <!-- Floating teddies -->
-
-    <div class="floatingTeddy teddy1">🧸</div>
-    <div class="floatingTeddy teddy2">🧸</div>
-    <div class="floatingTeddy teddy3">🧸</div>
-    <div class="floatingTeddy teddy4">🧸</div>
+    <div class="memoryCard">
 
 
-    <!-- =====================================================
-         MEMORIES
-    ====================================================== -->
+        <!-- TOP -->
 
-    <div class="memoriesFrame">
-
-        <div class="memoriesLight"></div>
-
-
-        <!-- Corner Teddy -->
-
-        <div class="memoryCornerTeddy left">
-            🧸
-        </div>
-
-        <div class="memoryCornerTeddy right">
-            🧸
+        <div class="ornament">
+            ✦　♡　✦
         </div>
 
 
-        <!-- TITLE -->
-
-        <div class="memoryTitleBox">
-
-            <div class="memoryTitle">
-                ✨ SPECIAL MEMORIES ✨
-            </div>
-
-            <div class="memorySubtitle">
-                💗 Beautiful moments to remember forever 💗
-            </div>
-
-            <div class="memoryUnderline"></div>
-
-            <div class="memoryTeddy">
-                🧸 💖 🎀 💖 🧸
-            </div>
-
+        <div class="eyebrow">
+            LITTLE MOMENTS • BIG MEMORIES
         </div>
+
+
+        <h1 class="memoryTitle">
+            Special Memories
+        </h1>
+
+
+        <div class="memorySubtitle">
+            Swipe left or right to explore the memories ♡
+        </div>
+
 
 
         <!-- =================================================
-             ONE PHOTO AT A TIME
+             MEMORY PHOTO
         ================================================== -->
 
-        <div class="singleMemoryArea">
+        <div
+            class="memoryFrame"
+            id="memoryFrame"
+        >
 
 
-            <div
-                class="singleMemoryFrame"
-                id="singleMemoryFrame"
+            <img
+                id="memoryPhoto"
+                class="memoryPhoto"
+                src="photo2.jpeg"
+                alt="Special Memory"
+                draggable="false"
             >
 
-
-                <!-- Glow -->
-
-                <div class="singleMemoryGlow"></div>
-
-
-                <!-- Moving light -->
-
-                <div class="singleMemoryLight"></div>
-
-
-                <!-- Frame corners -->
-
-                <div class="memoryCorner topLeft"></div>
-
-                <div class="memoryCorner topRight"></div>
-
-                <div class="memoryCorner bottomLeft"></div>
-
-                <div class="memoryCorner bottomRight"></div>
-
-
-                <!-- PHOTO -->
-
-                <div class="singleMemoryPhoto">
-
-                    <img
-                        id="memoryPhoto"
-                        src="birthday.jpg"
-                        alt="Memory 1"
-                    >
-
-                </div>
-
-
-                <!-- Teddy -->
-
-                <div class="singleFrameTeddy">
-                    🧸
-                </div>
-
-
-                <!-- Heart -->
-
-                <div class="singleFrameHeart">
-                    💖
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY NUMBER -->
-
-            <div
-                class="memoryNumber"
-                id="memoryNumber"
-            >
-                MEMORY 1
-            </div>
-
-
-            <!-- DOTS -->
-
-            <div
-                class="memoryDots"
-                id="memoryDots"
-            >
-
-                <span
-                    class="memoryDot active"
-                    data-index="0"
-                ></span>
-
-                <span
-                    class="memoryDot"
-                    data-index="1"
-                ></span>
-
-                <span
-                    class="memoryDot"
-                    data-index="2"
-                ></span>
-
-                <span
-                    class="memoryDot"
-                    data-index="3"
-                ></span>
-
-                <span
-                    class="memoryDot"
-                    data-index="4"
-                ></span>
-
-            </div>
 
         </div>
 
+
+
+        <!-- NUMBER -->
+
+        <div
+            id="memoryNumber"
+            class="memoryNumber"
+        >
+            MEMORY 01
+        </div>
+
+
+
+        <!-- CAPTION -->
+
+        <div
+            id="memoryCaption"
+            class="memoryCaption"
+        >
+            A beautiful moment ♡
+        </div>
+
+
+
+        <!-- DOTS -->
+
+        <div
+            id="dots"
+            class="dots"
+        ></div>
+
+
+
+        <!-- ARROW BUTTONS -->
+     
+        <div class="navigation">
+
+            <button
+                class="navButton"
+                onclick="previousMemory(); restartTimer();"
+                aria-label="Previous photo"
+            >
+                ‹
+            </button>
+
+
+            <button
+                class="navButton"
+                onclick="nextMemory(); restartTimer();"
+                aria-label="Next photo"
+            >
+                ›
+            </button>
+
+        </div>
+
+
+
+        BACK
+
+        <button
+            class="backButton"
+            onclick="goHome()"
+        >
+            ← BACK TO BIRTHDAY
+        </button>
+
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+            MADE WITH LOVE ♡
+        </div>
+
+
     </div>
-
-
-    <!-- BACK BUTTON -->
-
-    <button
-        class="backButton"
-        onclick="goHome()"
-    >
-        🧸 💕 BACK TO BIRTHDAY 💕 🧸
-    </button>
-
 
 </section>
 
@@ -2677,132 +1526,486 @@ body {
 <script>
 
 /* =========================================================
-   PHOTO LIST
+   MEMORY PHOTOS
+
+   birthday.jpeg
+   = FIRST PAGE ONLY
+
+   photo2.jpeg → photo10.jpeg
+   = MEMORY PAGE
 ========================================================= */
 
-const photos = [
+const memoryPhotos = [
 
-    "birthday.jpg",
-    "photo2.jpg",
-    "photo3.jpg",
-    "photo4.jpg",
-    "photo5.jpg"
+    "photo2.jpeg",
+
+    "photo3.jpeg",
+
+    "photo4.jpeg",
+
+    "photo5.jpeg",
+
+    "photo6.jpeg",
+
+    "photo7.jpeg",
+
+    "photo8.jpeg",
+
+    "photo9.jpeg",
+
+    "photo10.jpeg"
 
 ];
 
 
+
 /* =========================================================
-   MAIN PHOTO SLIDESHOW
+   MEMORY CAPTIONS
 ========================================================= */
 
-let mainPhotoIndex = 0;
+const memoryCaptions = [
 
-const mainPhoto =
-    document.getElementById("mainPhoto");
+    "A beautiful moment ♡",
 
-const mainBackgroundPhoto =
+    "A sweet little memory 🎀",
+
+    "A day worth remembering 🌸",
+
+    "A lovely moment 💗",
+
+    "Happiness captured ✦",
+
+    "A beautiful smile ♡",
+
+    "A memory to treasure 🌷",
+
+    "One more beautiful moment 💕",
+
+    "Forever a special memory 🎂"
+
+];
+
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let currentMemory = 0;
+
+let memoryTimer = null;
+
+let touchStartX = 0;
+
+let touchStartY = 0;
+
+let touchEndX = 0;
+
+let touchEndY = 0;
+
+let changingPhoto = false;
+
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const homePage =
     document.getElementById(
-        "mainBackgroundPhoto"
+        "homePage"
     );
 
 
-function changeMainPhoto() {
-
-    mainPhotoIndex++;
-
-    if (
-        mainPhotoIndex >= photos.length
-    ) {
-
-        mainPhotoIndex = 0;
-
-    }
+const memoryPage =
+    document.getElementById(
+        "memoryPage"
+    );
 
 
-    /*
-       Fade effect
-    */
-
-    mainPhoto.style.opacity = "0";
-
-    mainBackgroundPhoto.style.opacity = "0";
+const memoryFrame =
+    document.getElementById(
+        "memoryFrame"
+    );
 
 
-    setTimeout(() => {
-
-        mainPhoto.src =
-            photos[mainPhotoIndex];
-
-        mainBackgroundPhoto.src =
-            photos[mainPhotoIndex];
+const memoryPhoto =
+    document.getElementById(
+        "memoryPhoto"
+    );
 
 
-        mainPhoto.style.opacity = "1";
+const memoryNumber =
+    document.getElementById(
+        "memoryNumber"
+    );
 
-        mainBackgroundPhoto.style.opacity = "1";
 
-    }, 350);
+const memoryCaption =
+    document.getElementById(
+        "memoryCaption"
+    );
+
+
+const dots =
+    document.getElementById(
+        "dots"
+    );
+
+
+
+/* =========================================================
+   CREATE DOTS
+========================================================= */
+
+function createDots() {
+
+    dots.innerHTML = "";
+
+
+    memoryPhotos.forEach(
+        function(photo, index) {
+
+
+            const dot =
+                document.createElement(
+                    "span"
+                );
+
+
+            dot.className = "dot";
+
+
+            if (
+                index === currentMemory
+            ) {
+
+                dot.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            dot.addEventListener(
+                "click",
+                function() {
+
+                    if (
+                        index ===
+                        currentMemory
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    currentMemory =
+                        index;
+
+
+                    updateMemory();
+
+
+                    restartTimer();
+
+                }
+            );
+
+
+            dots.appendChild(dot);
+
+        }
+    );
 
 }
 
 
-/* Every 3.5 seconds */
 
-setInterval(
-    changeMainPhoto,
-    3500
-);
+/* =========================================================
+   UPDATE DOTS
+========================================================= */
+
+function updateDots() {
+
+    const allDots =
+        document.querySelectorAll(
+            ".dot"
+        );
+
+
+    allDots.forEach(
+        function(dot, index) {
+
+            dot.classList.toggle(
+                "active",
+                index === currentMemory
+            );
+
+        }
+    );
+
+}
 
 
 
 /* =========================================================
-   PRELOAD ALL PHOTOS
+   UPDATE MEMORY
 ========================================================= */
 
-photos.forEach(
-    (photo) => {
+function updateMemory() {
 
-        const img =
-            new Image();
 
-        img.src = photo;
+    if (changingPhoto) {
+
+        return;
 
     }
-);
+
+
+    changingPhoto = true;
+
+
+    memoryPhoto.classList.remove(
+        "slideIn"
+    );
+
+
+    memoryPhoto.classList.add(
+        "slideOut"
+    );
+
+
+    setTimeout(
+        function() {
+
+
+            memoryPhoto.src =
+                memoryPhotos[
+                    currentMemory
+                ];
+
+
+            memoryNumber.textContent =
+                "MEMORY " +
+                String(
+                    currentMemory + 1
+                ).padStart(
+                    2,
+                    "0"
+                );
+
+
+            memoryCaption.textContent =
+                memoryCaptions[
+                    currentMemory
+                ];
+
+
+            memoryPhoto.classList.remove(
+                "slideOut"
+            );
+
+
+            void memoryPhoto.offsetWidth;
+
+
+            memoryPhoto.classList.add(
+                "slideIn"
+            );
+
+
+            updateDots();
+
+
+            setTimeout(
+                function() {
+
+                    changingPhoto = false;
+
+                },
+                450
+            );
+
+
+        },
+        450
+    );
+
+}
 
 
 
 /* =========================================================
-   OPEN SURPRISE
+   NEXT MEMORY
 ========================================================= */
 
-function openSurprise() {
+function nextMemory() {
 
-    const home =
-        document.getElementById(
-            "homePage"
+
+    if (changingPhoto) {
+
+        return;
+
+    }
+
+
+    currentMemory++;
+
+
+    if (
+        currentMemory >=
+        memoryPhotos.length
+    ) {
+
+        currentMemory = 0;
+
+    }
+
+
+    updateMemory();
+
+}
+
+
+
+/* =========================================================
+   PREVIOUS MEMORY
+========================================================= */
+
+function previousMemory() {
+
+
+    if (changingPhoto) {
+
+        return;
+
+    }
+
+
+    currentMemory--;
+
+
+    if (
+        currentMemory < 0
+    ) {
+
+        currentMemory =
+            memoryPhotos.length - 1;
+
+    }
+
+
+    updateMemory();
+
+}
+
+
+
+/* =========================================================
+   START AUTO SLIDESHOW
+
+   4 SECONDS
+========================================================= */
+
+function startTimer() {
+
+
+    stopTimer();
+
+
+    memoryTimer =
+        setInterval(
+            function() {
+
+                nextMemory();
+
+            },
+            4000
         );
 
-    const surprise =
-        document.getElementById(
-            "surprisePage"
+}
+
+
+
+/* =========================================================
+   STOP TIMER
+========================================================= */
+
+function stopTimer() {
+
+
+    if (
+        memoryTimer !== null
+    ) {
+
+        clearInterval(
+            memoryTimer
         );
 
+        memoryTimer = null;
 
-    home.style.display =
-        "none";
+    }
 
-    surprise.style.display =
-        "block";
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+}
 
 
-    createSparkleBurst();
+
+/* =========================================================
+   RESTART TIMER
+========================================================= */
+
+function restartTimer() {
+
+    startTimer();
+
+}
+
+
+
+/* =========================================================
+   OPEN MEMORY PAGE
+========================================================= */
+
+function openMemories() {
+
+
+    homePage.classList.add(
+        "hidden"
+    );
+
+
+    memoryPage.classList.remove(
+        "hidden"
+    );
+
+
+    currentMemory = 0;
+
+
+    memoryPhoto.src =
+        memoryPhotos[0];
+
+
+    memoryNumber.textContent =
+        "MEMORY 01";
+
+
+    memoryCaption.textContent =
+        memoryCaptions[0];
+
+
+    createDots();
+
+
+    startTimer();
+
+
+    window.scrollTo(
+        0,
+        0
+    );
 
 }
 
@@ -2814,253 +2017,198 @@ function openSurprise() {
 
 function goHome() {
 
-    const home =
-        document.getElementById(
-            "homePage"
-        );
 
-    const surprise =
-        document.getElementById(
-            "surprisePage"
-        );
+    stopTimer();
 
 
-    surprise.style.display =
-        "none";
-
-    home.style.display =
-        "block";
+    memoryPage.classList.add(
+        "hidden"
+    );
 
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    homePage.classList.remove(
+        "hidden"
+    );
+
+
+    window.scrollTo(
+        0,
+        0
+    );
 
 }
 
 
 
 /* =========================================================
-   SPECIAL MEMORY SLIDESHOW
+   TOUCH START
 ========================================================= */
 
-const memoryPhotos = [
+memoryFrame.addEventListener(
+    "touchstart",
+    function(event) {
 
-    "birthday.jpg",
-    "photo2.jpg",
-    "photo3.jpg",
-    "photo4.jpg",
-    "photo5.jpg"
 
-];
+        touchStartX =
+            event.touches[0].clientX;
 
 
-let memoryIndex = 0;
+        touchStartY =
+            event.touches[0].clientY;
 
 
-const memoryPhoto =
-    document.getElementById(
-        "memoryPhoto"
-    );
-
-
-const singleMemoryFrame =
-    document.getElementById(
-        "singleMemoryFrame"
-    );
-
-
-const memoryNumber =
-    document.getElementById(
-        "memoryNumber"
-    );
-
-
-const memoryDots =
-    document.querySelectorAll(
-        ".memoryDot"
-    );
-
-
-
-/* =========================================================
-   UPDATE MEMORY
-========================================================= */
-
-function updateMemory() {
-
-    /*
-       Slide OUT
-    */
-
-    singleMemoryFrame.classList.remove(
-        "memorySlideIn"
-    );
-
-    singleMemoryFrame.classList.add(
-        "memorySlideOut"
-    );
-
-
-    setTimeout(() => {
-
-
-        /*
-           Next image
-        */
-
-        memoryIndex++;
-
-
-        if (
-            memoryIndex >=
-            memoryPhotos.length
-        ) {
-
-            memoryIndex = 0;
-
-        }
-
-
-        /*
-           Change image
-        */
-
-        memoryPhoto.src =
-            memoryPhotos[
-                memoryIndex
-            ];
-
-
-        /*
-           Change number
-        */
-
-        memoryNumber.textContent =
-            "MEMORY " +
-            (memoryIndex + 1);
-
-
-        /*
-           Update dots
-        */
-
-        memoryDots.forEach(
-            (dot, index) => {
-
-                dot.classList.toggle(
-                    "active",
-                    index === memoryIndex
-                );
-
-            }
-        );
-
-
-        /*
-           Remove old animation
-        */
-
-        singleMemoryFrame.classList.remove(
-            "memorySlideOut"
-        );
-
-
-        /*
-           Restart animation
-        */
-
-        void singleMemoryFrame.offsetWidth;
-
-
-        /*
-           Slide IN
-        */
-
-        singleMemoryFrame.classList.add(
-            "memorySlideIn"
-        );
-
-
-    }, 650);
-
-
-    /*
-       Remove animation class
-    */
-
-    setTimeout(() => {
-
-        singleMemoryFrame.classList.remove(
-            "memorySlideIn"
-        );
-
-    }, 1450);
-
-}
-
-
-
-/* =========================================================
-   AUTO MEMORY CHANGE
-========================================================= */
-
-setInterval(
-    updateMemory,
-    4000
-);
-
-
-
-/* =========================================================
-   MEMORY DOT CLICK
-========================================================= */
-
-memoryDots.forEach(
-    (dot, index) => {
-
-        dot.addEventListener(
-            "click",
-            () => {
-
-
-                if (
-                    index === memoryIndex
-                ) {
-
-                    return;
-
-                }
-
-
-                /*
-                   Set previous index
-                   so updateMemory()
-                   moves to selected image
-                */
-
-                memoryIndex =
-                    index - 1;
-
-
-                if (
-                    memoryIndex < 0
-                ) {
-
-                    memoryIndex =
-                        memoryPhotos.length - 1;
-
-                }
-
-
-                updateMemory();
-
-            }
-        );
-
+    },
+    {
+        passive: true
     }
 );
+
+
+
+/* =========================================================
+   TOUCH END
+========================================================= */
+
+memoryFrame.addEventListener(
+    "touchend",
+    function(event) {
+
+
+        touchEndX =
+            event.changedTouches[0].clientX;
+
+
+        touchEndY =
+            event.changedTouches[0].clientY;
+
+
+        handleSwipe();
+
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+
+/* =========================================================
+   SWIPE HANDLER
+========================================================= */
+
+function handleSwipe() {
+
+
+    const horizontalDistance =
+        touchEndX - touchStartX;
+
+
+    const verticalDistance =
+        touchEndY - touchStartY;
+
+
+    const minimumSwipe = 45;
+
+
+    /*
+       Ignore vertical scrolling
+    */
+
+    if (
+        Math.abs(verticalDistance) >
+        Math.abs(horizontalDistance)
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        Math.abs(horizontalDistance) <
+        minimumSwipe
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        horizontalDistance < 0
+    ) {
+
+        nextMemory();
+
+    } else {
+
+        previousMemory();
+
+    }
+
+
+    restartTimer();
+
+}
+
+
+
+/* =========================================================
+   KEYBOARD SUPPORT
+========================================================= */
+
+// document.addEventListener(
+//     "keydown",
+//     function(event) {
+
+
+//         if (
+//             memoryPage.classList.contains(
+//                 "hidden"
+//             )
+//         ) {
+
+//             return;
+
+//         }
+
+
+//         if (
+//             event.key ===
+//             "ArrowRight"
+//         ) {
+
+//             nextMemory();
+
+//             restartTimer();
+
+//         }
+
+
+//         if (
+//             event.key ===
+//             "ArrowLeft"
+//         ) {
+
+//             previousMemory();
+
+//             restartTimer();
+
+//         }
+
+
+//         if (
+//             event.key ===
+//             "Escape"
+//         ) {
+
+//             goHome();
+
+//         }
+
+//     }
+// );
 
 
 
@@ -3069,12 +2217,15 @@ memoryDots.forEach(
 ========================================================= */
 
 memoryPhotos.forEach(
-    (photo) => {
+    function(photo) {
 
-        const img =
+
+        const image =
             new Image();
 
-        img.src = photo;
+
+        image.src =
+            photo;
 
     }
 );
@@ -3082,155 +2233,30 @@ memoryPhotos.forEach(
 
 
 /* =========================================================
-   SPARKLE EFFECT
+   IMAGE ERROR HANDLING
 ========================================================= */
 
-function createSparkle() {
-
-    const sparkle =
-        document.createElement(
-            "div"
-        );
+memoryPhoto.addEventListener(
+    "error",
+    function() {
 
 
-    sparkle.className =
-        "sparkle";
+        memoryPhoto.alt =
+            "Photo not found: " +
+            memoryPhotos[
+                currentMemory
+            ];
 
-
-    const symbols = [
-
-        "✨",
-        "💖",
-        "💗",
-        "⭐",
-        "💕",
-        "🎀",
-        "🧸"
-
-    ];
-
-
-    sparkle.textContent =
-        symbols[
-            Math.floor(
-                Math.random() *
-                symbols.length
-            )
-        ];
-
-
-    sparkle.style.left =
-        Math.random() * 100 +
-        "vw";
-
-
-    sparkle.style.top =
-        (60 +
-        Math.random() * 35) +
-        "vh";
-
-
-    document.body.appendChild(
-        sparkle
-    );
-
-
-    setTimeout(() => {
-
-        sparkle.remove();
-
-    }, 1800);
-
-}
-
-
-/* Continuous sparkles */
-
-setInterval(
-    createSparkle,
-    500
+    }
 );
 
 
 
 /* =========================================================
-   SPARKLE BURST
+   INITIALIZE
 ========================================================= */
 
-function createSparkleBurst() {
-
-    for (
-        let i = 0;
-        i < 25;
-        i++
-    ) {
-
-        setTimeout(
-            createSparkle,
-            i * 70
-        );
-
-    }
-
-}
-
-
-
-/* =========================================================
-   CLICK ANYWHERE = SPARKLE BURST
-========================================================= */
-
-document.addEventListener(
-    "click",
-    function(event) {
-
-        for (
-            let i = 0;
-            i < 6;
-            i++
-        ) {
-
-            const sparkle =
-                document.createElement(
-                    "div"
-                );
-
-
-            sparkle.className =
-                "sparkle";
-
-
-            sparkle.textContent =
-                "✨";
-
-
-            sparkle.style.left =
-                event.clientX +
-                (Math.random() * 80 - 40) +
-                "px";
-
-
-            sparkle.style.top =
-                event.clientY +
-                (Math.random() * 80 - 40) +
-                "px";
-
-
-            document.body.appendChild(
-                sparkle
-            );
-
-
-            setTimeout(() => {
-
-                sparkle.remove();
-
-            }, 1800);
-
-        }
-
-    }
-);
+createDots();
 
 </script>
 
